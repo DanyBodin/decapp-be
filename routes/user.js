@@ -7,7 +7,7 @@ const router = express.Router();
 
 const User = require("../models/User.js");
 
-router.post("/user/signup", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     if (req.fields.username === undefined) {
       res.status(400).json({ message: "Missing parameter(s)" });
@@ -46,7 +46,7 @@ router.post("/user/signup", async (req, res) => {
   }
 });
 
-router.post("user/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.fields.email });
     if (user === null) {
