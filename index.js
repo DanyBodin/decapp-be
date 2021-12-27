@@ -9,7 +9,7 @@ app.use(cors());
 
 require("dotenv").config();
 
-mongoose.connect(process.env.MONGO_ATLAS_URI, {
+mongoose.connect(process.env.MONGO_DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

@@ -15,7 +15,7 @@ router.post("/signup", async (req, res) => {
       const isUserExist = await User.findOne({ email: req.fields.email });
 
       if (isUserExist !== null) {
-        res.status(400).json({ message: "This email already has han account" });
+        res.status(400).json({ message: "This email already has an account" });
       } else {
         const salt = uid2(64);
         const hash = SHA256(req.fields.password + salt).toString(encBase64);
